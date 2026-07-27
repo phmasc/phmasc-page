@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #0A0A1A;
+  --color-surface: #12122A;
+  --color-blue: #0099FF;
+  --color-purple: #7B2FF7;
+  --color-magenta: #E5007F;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: #FFFFFF;
+  font-family: var(--font-manrope), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom glow effect */
+.glow-cta {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-cta:hover {
+  box-shadow: 0 0 25px rgba(0, 153, 255, 0.4), 0 0 35px rgba(229, 0, 127, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Card hover effect */
+.card-hover-subtle {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-subtle:hover {
+  border-color: rgba(123, 47, 247, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px -10px rgba(0, 153, 255, 0.15);
+}
