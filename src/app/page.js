@@ -32,86 +32,89 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-ph-bg text-ph-text flex flex-col relative overflow-hidden selection:bg-ph-blue/30 selection:text-white">
 
-      {/* 1. HERO SECTION (Acima da Dobra) */}
-      <section className="relative min-h-[92vh] flex flex-col justify-between pt-6 pb-16 px-4 sm:px-8 max-w-6xl mx-auto w-full">
-        {/* Canvas de Nós & Conexões Animado */}
+      {/* 1. HERO SECTION (Acima da Dobra - Full Bleed Width) */}
+      <section className="relative min-h-[92vh] w-full flex flex-col justify-between pt-6 pb-16">
+        {/* Canvas de Nós & Conexões Animado (100% da tela) */}
         <NetworkBackground />
 
-        {/* Gradiente sutil de iluminação de fundo (135deg) */}
-        <div className="absolute inset-0 bg-hero-gradient pointer-events-none opacity-60" />
+        {/* Gradiente sutil de iluminação de fundo (135deg - 100% da tela) */}
+        <div className="absolute inset-0 bg-hero-gradient pointer-events-none opacity-60 w-full" />
 
-        {/* Header / Navbar */}
-        <header className="relative z-10 flex items-center justify-between py-4 border-b border-ph-border/50 backdrop-blur-sm">
-          <div className="flex items-center gap-3">
-            <Logo size={42} />
-            <div className="flex flex-col">
-              <span className="font-bold text-lg tracking-tight text-white">PH Masc</span>
-              <span className="text-xs text-ph-muted font-medium">Soluções em Dados</span>
+        {/* Container interno de conteúdo centralizado */}
+        <div className="relative z-10 max-w-6xl mx-auto w-full px-4 sm:px-8 flex flex-col justify-between min-h-[85vh]">
+          {/* Header / Navbar */}
+          <header className="flex items-center justify-between py-4 border-b border-ph-border/50 backdrop-blur-sm">
+            <div className="flex items-center gap-3">
+              <Logo size={42} />
+              <div className="flex flex-col">
+                <span className="font-bold text-lg tracking-tight text-white">PH Masc</span>
+                <span className="text-xs text-ph-muted font-medium">Soluções em Dados</span>
+              </div>
             </div>
-          </div>
-
-          <a
-            href="https://www.linkedin.com/in/phelipe-mascarenhas/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-lg bg-ph-surface border border-ph-border text-ph-text hover:border-ph-blue hover:text-ph-blue transition-all"
-          >
-            <Linkedin size={15} />
-            <span className="hidden sm:inline">LinkedIn</span>
-          </a>
-        </header>
-
-        {/* Conteúdo Central do Hero */}
-        <div className="relative z-10 my-auto py-12 flex flex-col items-start max-w-3xl">
-          {/* Tagline / Subtítulo da Marca */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ph-surface/80 border border-ph-purple/40 text-ph-blue text-xs sm:text-sm font-medium mb-6 backdrop-blur-md">
-            <Sparkles size={14} className="text-ph-magenta" />
-            <span>Consultor de IA & Cientista de Dados</span>
-          </div>
-
-          {/* Nome */}
-          <h2 className="text-ph-muted text-lg sm:text-xl font-medium mb-2 tracking-wide">
-            Phelipe Mascarenhas
-          </h2>
-
-          {/* Headline Principal */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.12] tracking-tight mb-6 text-balance">
-            Dados que viram decisão. <br className="hidden sm:inline" />
-            Agentes que viram resultado.
-          </h1>
-
-          {/* Subtítulo explicativo */}
-          <p className="text-base sm:text-xl text-ph-muted leading-relaxed mb-8 max-w-2xl font-normal">
-            13 anos de Qualicorp. Hoje construindo agentes de IA com n8n, Azure OpenAI e Python. Consultor, Cientista de Dados, resolvedor de problemas.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-            <button
-              onClick={scrollToContact}
-              className="glow-cta w-full sm:w-auto px-8 py-4 rounded-full bg-btn-gradient text-white font-semibold text-base flex items-center justify-center gap-3 shadow-lg hover:brightness-110 active:scale-95 transition-all"
-            >
-              <MessageSquare size={18} />
-              <span>Vamos conversar</span>
-              <ArrowRight size={18} />
-            </button>
 
             <a
               href="https://www.linkedin.com/in/phelipe-mascarenhas/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-6 py-4 rounded-full bg-ph-surface/90 hover:bg-ph-surface-hover border border-ph-border hover:border-ph-blue/50 text-ph-text text-base font-medium flex items-center justify-center gap-2 transition-all"
+              className="flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-lg bg-ph-surface border border-ph-border text-ph-text hover:border-ph-blue hover:text-ph-blue transition-all"
             >
-              <Linkedin size={18} className="text-ph-blue" />
-              <span>Ver LinkedIn</span>
+              <Linkedin size={15} />
+              <span className="hidden sm:inline">LinkedIn</span>
             </a>
-          </div>
-        </div>
+          </header>
 
-        {/* Indicador de rolagem */}
-        <div className="relative z-10 flex items-center gap-2 text-xs text-ph-muted/60 pt-4">
-          <span className="w-2 h-2 rounded-full bg-ph-blue animate-pulse" />
-          <span>Role para explorar a trajetória e soluções</span>
+          {/* Conteúdo Central do Hero */}
+          <div className="my-auto py-12 flex flex-col items-start max-w-3xl">
+            {/* Tagline / Subtítulo da Marca */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-ph-surface/80 border border-ph-purple/40 text-ph-blue text-xs sm:text-sm font-medium mb-6 backdrop-blur-md">
+              <Sparkles size={14} className="text-ph-magenta" />
+              <span>Consultor de IA & Cientista de Dados</span>
+            </div>
+
+            {/* Nome */}
+            <h2 className="text-ph-muted text-lg sm:text-xl font-medium mb-2 tracking-wide">
+              Phelipe Mascarenhas
+            </h2>
+
+            {/* Headline Principal */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.12] tracking-tight mb-6 text-balance">
+              Dados que viram decisão. <br className="hidden sm:inline" />
+              Agentes que viram resultado.
+            </h1>
+
+            {/* Subtítulo explicativo */}
+            <p className="text-base sm:text-xl text-ph-muted leading-relaxed mb-8 max-w-2xl font-normal">
+              13 anos de Qualicorp. Hoje construindo agentes de IA com n8n, Azure OpenAI e Python. Consultor, Cientista de Dados, resolvedor de problemas.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+              <button
+                onClick={scrollToContact}
+                className="glow-cta w-full sm:w-auto px-8 py-4 rounded-full bg-btn-gradient text-white font-semibold text-base flex items-center justify-center gap-3 shadow-lg hover:brightness-110 active:scale-95 transition-all"
+              >
+                <MessageSquare size={18} />
+                <span>Vamos conversar</span>
+                <ArrowRight size={18} />
+              </button>
+
+              <a
+                href="https://www.linkedin.com/in/phelipe-mascarenhas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-6 py-4 rounded-full bg-ph-surface/90 hover:bg-ph-surface-hover border border-ph-border hover:border-ph-blue/50 text-ph-text text-base font-medium flex items-center justify-center gap-2 transition-all"
+              >
+                <Linkedin size={18} className="text-ph-blue" />
+                <span>Ver LinkedIn</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Indicador de rolagem */}
+          <div className="flex items-center gap-2 text-xs text-ph-muted/60 pt-4">
+            <span className="w-2 h-2 rounded-full bg-ph-blue animate-pulse" />
+            <span>Role para explorar a trajetória e soluções</span>
+          </div>
         </div>
       </section>
 
