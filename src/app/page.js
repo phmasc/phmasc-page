@@ -52,15 +52,27 @@ export default function Home() {
               </div>
             </div>
 
-            <a
-              href="https://www.linkedin.com/in/phelipe-mascarenhas/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-lg bg-ph-surface border border-ph-border text-ph-text hover:border-ph-blue hover:text-ph-blue transition-all"
-            >
-              <Linkedin size={15} />
-              <span className="hidden sm:inline">LinkedIn</span>
-            </a>
+            <div className="flex items-center gap-2">
+              <a
+                href="https://github.com/phmasc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-lg bg-ph-surface border border-ph-border text-ph-text hover:border-ph-purple hover:text-ph-purple transition-all"
+              >
+                <Github size={15} />
+                <span className="hidden sm:inline">GitHub</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/phelipe-mascarenhas/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-lg bg-ph-surface border border-ph-border text-ph-text hover:border-ph-blue hover:text-ph-blue transition-all"
+              >
+                <Linkedin size={15} />
+                <span className="hidden sm:inline">LinkedIn</span>
+              </a>
+            </div>
           </header>
 
           {/* Conteúdo Central do Hero */}
