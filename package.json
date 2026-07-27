@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "clean": "powershell -Command \"if (Test-Path .next) { Remove-Item -Force -Recurse .next -ErrorAction SilentlyContinue }\"",
-    "dev": "powershell -Command \"if (Test-Path .next) { Remove-Item -Force -Recurse .next -ErrorAction SilentlyContinue }\" && next dev",
-    "build": "powershell -Command \"if (Test-Path .next) { Remove-Item -Force -Recurse .next -ErrorAction SilentlyContinue }\" && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
