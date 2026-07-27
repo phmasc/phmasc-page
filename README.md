@@ -45,7 +45,7 @@ npm install
 
 3. Crie o arquivo `.env.local` na raiz com o número de celular:
 ```env
-NEXT_PUBLIC_PHONE_NUMBER=+5511974282313
+NEXT_PUBLIC_PHONE_NUMBER=+5599999999999
 ```
 
 4. Inicie o servidor de desenvolvimento:
