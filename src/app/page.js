@@ -18,7 +18,8 @@ import {
   BrainCircuit,
   MessageSquare,
   Sparkles,
-  CheckCircle2
+  CheckCircle2,
+  ExternalLink
 } from 'lucide-react';
 
 export default function Home() {
@@ -96,7 +97,7 @@ export default function Home() {
 
             {/* Subtítulo explicativo */}
             <p className="text-base sm:text-xl text-ph-muted leading-relaxed mb-8 max-w-2xl font-normal">
-              13 anos de Qualicorp. Hoje construindo agentes de IA com n8n, Azure OpenAI e Python. Consultor, Cientista de Dados, resolvedor de problemas.
+              13 anos de Qualicorp. Hoje Consultor de IA na <a href="https://www.jedicrm.com.br/" target="_blank" rel="noopener noreferrer" className="text-ph-blue font-semibold hover:underline inline-flex items-center gap-1">JediCRM <ExternalLink size={16} className="inline opacity-80" /></a> e à frente da PH Masc. Construindo agentes de IA com n8n, Azure OpenAI e Python.
             </p>
 
             {/* CTAs */}
@@ -146,7 +147,7 @@ export default function Home() {
               </p>
 
               <p className="text-ph-muted text-base sm:text-lg leading-relaxed">
-                Em 2023 fundei a <strong className="text-white font-semibold">PH Masc</strong> para levar essa visão para mais empresas. Em 2025 assumi como Consultor de IA na <strong className="text-white font-semibold">JediCRM</strong>, onde desenvolvo agentes inteligentes com <span className="text-white font-medium">n8n, Redis e Azure OpenAI</span> integrados a CRM, que automatizam fluxos conversacionais e de decisão.
+                Em 2023 fundei a <strong className="text-white font-semibold">PH Masc</strong> para levar essa visão para mais empresas. Em 2025 assumi como Consultor de IA na <a href="https://www.jedicrm.com.br/" target="_blank" rel="noopener noreferrer" className="text-ph-blue font-semibold hover:underline inline-flex items-center gap-1">JediCRM <ExternalLink size={16} className="inline opacity-80" /></a>, onde desenvolvo agentes inteligentes com <span className="text-white font-medium">n8n, Redis e Azure OpenAI</span> integrados a CRM, que automatizam fluxos conversacionais e de decisão.
               </p>
 
               <p className="text-ph-text text-base sm:text-lg font-medium border-l-2 border-ph-magenta pl-4 py-1 italic bg-ph-surface/50 rounded-r-lg">
@@ -328,7 +329,7 @@ export default function Home() {
                 Projetos Críticos
               </span>
               <span className="text-ph-muted text-xs sm:text-sm font-medium leading-normal">
-                Scores de qualificação de proponentes, análise de sinistralidade e agentes de IA integrados a CRM
+                Scores de qualificação de proponentes, análise de sinistralidade e agentes de IA com CRM na <a href="https://www.jedicrm.com.br/" target="_blank" rel="noopener noreferrer" className="text-ph-blue font-semibold hover:underline inline-flex items-center gap-0.5">JediCRM <ExternalLink size={13} className="inline" /></a>
               </span>
             </div>
 
