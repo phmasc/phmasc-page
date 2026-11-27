@@ -65,6 +65,24 @@ npm run build
 
 ---
 
+## 🐳 Deploy em Docker Swarm / Portainer
+
+O repositório está configurado para build automatizado no **GitHub Container Registry (GHCR)** e deploy via **Portainer** em **Docker Swarm** com **Traefik**.
+
+### Pipeline CI/CD (GitHub Actions)
+- Em pushes na branch `main` (ou disparo manual em **Actions → Build and Push Docker Image**), o workflow publica `ghcr.io/phmasc/phmasc-page:latest`.
+- Caso deseje definir o telefone do vCard em tempo de build sem expor no código, cadastre o secret ou variable `NEXT_PUBLIC_PHONE_NUMBER` no repositório.
+
+### Stack no Portainer
+1. No Portainer, acesse **Stacks → Add stack** (via **Repository** apontando para este repo com `docker-compose.yml`, ou colando o conteúdo no **Web editor**).
+2. Certifique-se de que a rede overlay `network_swarm_public` já existe no Swarm.
+3. (Opcional) Defina as variáveis de ambiente na stack:
+   - `DOMAIN_NAME`: domínio roteado pelo Traefik (padrão: `phelipe.mascarenhas.tech`)
+   - `IMAGE_NAME`: imagem Docker (padrão: `ghcr.io/phmasc/phmasc-page:latest`)
+4. Clique em **Deploy the stack**.
+
+---
+
 ## 📝 Licença
 
 Todos os direitos reservados a PH Masc — Soluções em Dados © 2023.
