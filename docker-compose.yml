@@ -1,0 +1,38 @@
+services:
+  phmasc-page:
+    image: ${IMAGE_NAME:-ghcr.io/phmasc/phmasc-page:latest}
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_PHONE_NUMBER: ${NEXT_PUBLIC_PHONE_NUMBER:-}
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    networks:
+      - network_swarm_public
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.phmasc-page.rule=Host(`${DOMAIN_NAME:-phelipe.mascarenhas.tech}`)
+        - traefik.http.routers.phmasc-page.entrypoints=websecure
+        - traefik.http.routers.phmasc-page.tls.certresolver=letsencryptresolver
+        - traefik.http.services.phmasc-page.loadbalancer.server.port=3000
+        - traefik.http.routers.phmasc-page.service=phmasc-page
+
+networks:
+  network_swarm_public:
+    external: true
+    name: network_swarm_public
